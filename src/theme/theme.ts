@@ -1,0 +1,88 @@
+export const palette = {
+    yellow: '#F9C80E',
+    lightyellow: '#ffffe0',
+    darkyellow: '#f9b500',
+    red: '#EA3546',
+    lightred: '#ffc0cb',
+    darkred: '#e53935',
+    purple: '#B16FD8',
+    lightpurple: '#e1bee7',
+    darkpurple: '#7e57c2',
+    pink: '#FF69BF',
+    lightpink: '#ffc0cb',
+    darkpink: '#e53935',
+    turquoise: '#33CCCC',
+    lightturquoise: '#9df8ff',
+    darkturquoise: '#00bcd4',
+    blue: '#2898D0',
+    lightblue: '#9df8ff',
+    darkblue: '#00bcd4',
+    green: '#9DCC55',
+    lightgreen: '#c8e6c9',
+    darkgreen: '#81c784',
+    orange: '#FF9933',
+    lightorange: '#ffb74d',
+    darkorange: '#ff8a65',
+    white: '#FFFFFF',
+    gray: '#818181',
+    black: '#000000',
+    lightgray: '#ECECEC',
+    transparent: '#FFFFFF00',
+}
+
+export const theme = {
+    colors: {
+        background: palette.turquoise,
+        forground: palette.black,
+        primary: palette.blue,
+        secondary: palette.gray,
+        success: palette.green,
+        warning: palette.orange,
+        danger: palette.red,
+        border: palette.lightgray,
+        devider: palette.gray,
+        header: palette.black,
+        input: palette.black,
+        inputbackground: palette.white,
+        inputborder: palette.gray,
+        inputplaceholder: palette.gray,
+        text: palette.black,
+        textlight: palette.white,
+    },
+    spacing: {
+        s: 8,
+        m: 16,
+        l: 24,
+        xl: 40
+    },
+    customColors: {
+        transparentBG: 'rgba(240, 240, 240, .8)',
+        transparentBG2: 'rgba(240, 240, 240, .6)',
+        transparentBG3: 'rgba(240, 240, 240, .4)',
+        transparentBG4: 'rgba(240, 240, 240, .2)',
+        transparentBG5: 'rgba(240, 240, 240, .1)',
+        transparentBG6: 'rgba(240, 240, 240, .05)',
+        transparentBG7: 'rgba(240, 240, 240, .025)',
+        transparentBR: 'rgba(0, 0, 0, .1)',
+        transparentBR2: 'rgba(0, 0, 0, .2)',
+        transparentBR3: 'rgba(0, 0, 0, .3)',
+        transparentBR4: 'rgba(0, 0, 0, .4)',
+        transparentBR5: 'rgba(0, 0, 0, .5)',
+        transparentBR6: 'rgba(0, 0, 0, .6)',
+        transparentBR7: 'rgba(0, 0, 0, .7)',
+        transparentBR8: 'rgba(0, 0, 0, .8)',
+        transparentBR9: 'rgba(0, 0, 0, .9)',
+    }
+}
+
+
+export const darkTheme = {
+    ...theme,
+    colors: {
+        ...theme.colors,
+        background: palette.black,
+        forground: palette.white,
+        primary: palette.blue,
+        success: palette.green,
+    }
+}
