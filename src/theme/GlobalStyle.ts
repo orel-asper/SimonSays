@@ -44,10 +44,6 @@ const spacingXXL = {
     paddingVertical: 16
 }
 
-const font = {
-    fontFamily: 'OpenSans-Regular',
-}
-
 const shadowBox = {
     ...Platform.select({
         android: {
@@ -99,7 +95,6 @@ export default StyleSheet.create({
         backgroundColor: theme.colors.background
     },
     text: {
-        ...font,
         fontSize: normalize(16),
         color: theme.colors.textlight,
     },
@@ -154,18 +149,26 @@ export default StyleSheet.create({
     SpacingBox: {
         ...spacingXL,
     },
+    TextBig: {
+        fontSize: normalize(20),
+        color: theme.colors.textlight,
+        fontWeight: 'bold',
+    },
+    TextBigest: {
+        fontSize: normalize(40),
+        fontWeight: 'bold',
+        color: theme.colors.textlight,
+    },
     // ------------ AwesomeButton ------------
     AwesomeButton: {
         margin: normalize(5),
     },
     AwesomeButtonTextBig: {
-        ...font,
         fontSize: normalize(50),
         fontWeight: 'bold',
         color: theme.colors.textlight,
     },
     AwesomeButtonText: {
-        ...font,
         fontSize: normalize(30),
         fontWeight: 'bold',
         color: theme.colors.textlight,
@@ -181,7 +184,6 @@ export default StyleSheet.create({
     },
     RootBottomTabButtonText: {
         fontSize: normalize(18),
-        fontFamily: 'OpenSans-Regular',
         color: theme.colors.textlight,
     },
 })
