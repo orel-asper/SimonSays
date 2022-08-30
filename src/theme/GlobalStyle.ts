@@ -134,6 +134,26 @@ export default StyleSheet.create({
         justifyContent: 'space-evenly',
         alignItems: 'center',
     },
+    Column: {
+        display: 'flex',
+        flexWrap: 'wrap',
+        flexDirection: 'column',
+        justifyContent: 'space-evenly',
+        alignItems: 'center',
+    },
+    TextInput: {
+        width: normalize(WINDOW_WIDTH - 30),
+        alignSelf: 'center',
+        height: normalize(WINDOW_HEIGHT * .06),
+        marginTop: 10,
+        backgroundColor: theme.colors.backgroundlight,
+        marginVertical: 10,
+        borderRadius: normalize(WINDOW_HEIGHT * .06) / 2,
+        ...spacingL,
+    },
+    SpacingBox: {
+        ...spacingXL,
+    },
     // ------------ AwesomeButton ------------
     AwesomeButton: {
         margin: normalize(5),
@@ -157,6 +177,7 @@ export default StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 100,
+        margin: normalize(5),
     },
     RootBottomTabButtonText: {
         fontSize: normalize(18),

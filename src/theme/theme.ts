@@ -33,6 +33,8 @@ export const palette = {
 export const theme = {
     colors: {
         background: palette.turquoise,
+        backgrounddarker: palette.darkturquoise,
+        backgroundlight: palette.lightturquoise,
         forground: palette.black,
         primary: palette.blue,
         secondary: palette.gray,

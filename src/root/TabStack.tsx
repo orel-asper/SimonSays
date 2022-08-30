@@ -38,6 +38,7 @@ const TabStack: React.FC = React.memo(() => {
                 tabBarStyle: {
                     backgroundColor: '#33CCCC',
                     borderTopColor: '#33CCCC',
+                    height: 60,
                 },
             }}
         >
