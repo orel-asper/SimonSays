@@ -36,6 +36,8 @@ const Game: React.FC = () => {
     const clearArray = () => {
         dispatch(clear_color_array())
     }
+    // ------------ compare the user array with the colorArray ------------
+
     // ------------ user add color ------------
     const addUserColor = (color: string) => {
         setUserColorArray([...userColorArray, color])
@@ -56,17 +58,15 @@ const Game: React.FC = () => {
         const color = GenerateRandomColor()
         // add color to the array
         addColor(color)
-        // clear the array
-        // clearArray()
     }, [addUserColor])
 
+    console.log(colorArray, userColorArray, player)
 
     useEffect(() => {
         let timeout: number;
         (async () => {
             try {
                 await main();
-                console.log(colorArray)
                 await new Promise((resolve: any) => setTimeout(resolve, 2000))
                 for (let i = 0; i < colorArray.length; i++) {
                     setLightColor({ ...lightColor, [colorArray[i]]: true })
@@ -86,11 +86,13 @@ const Game: React.FC = () => {
                 }
             }
             catch (error) {
-                console.log(error)
+                console.log(error);
+                clearArray();
             }
         })()
 
         return () => {
+
             clearTimeout(timeout)
         }
     }, [])
