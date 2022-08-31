@@ -6,7 +6,7 @@ import AwesomeButton from '../../AwesomeButton/src/AwesomeButton';
 import { letsplaybutton } from './main_config';
 import TextInput from '../../components/TextInput';
 import { useDispatch, useSelector } from 'react-redux';
-import { add_player } from '../../Redux/actions/main.actions';
+import { add_player, clear_color_array } from '../../Redux/actions/main.actions';
 
 type MainMenuProps = {
     navigation: any
@@ -21,12 +21,23 @@ type Player = {
 const MainMenu: React.FC<MainMenuProps> = ({ navigation }) => {
     //global
     const dispatch = useDispatch();
+    const highescore = useSelector((state: Player) => state.mainReducer.highescore)
     const player = useSelector((state: Player) => state.mainReducer.player)
     //local state
     const [name, setName] = useState('')
 
-    const addPlayer = () => {
+    // ------------ clear the array ------------
+    const clearColorsArray = () => {
+        dispatch(clear_color_array())
+    }
+    // ------------ add player------------
+    const addPlayer = (name: string) => {
         dispatch(add_player(name))
+    }
+
+    const Continue = () => {
+        clearColorsArray()
+        addPlayer(player.name !== '' ? player.name : name)
         setName('')
         navigation.navigate('Game')
     }
@@ -36,7 +47,7 @@ const MainMenu: React.FC<MainMenuProps> = ({ navigation }) => {
             <Box style={GlobalStyle.MiddleOfScreen}>
                 {/* get user name  */}
                 <Box style={GlobalStyle.SpacingBox}>
-                    {!(player.score > 0) &&
+                    {!(highescore > 0) &&
                         <>
                             <Text style={GlobalStyle.TextBig}>Enter player name</Text>
                             <TextInput
@@ -49,8 +60,8 @@ const MainMenu: React.FC<MainMenuProps> = ({ navigation }) => {
                 </Box>
                 <AwesomeButton
                     {...letsplaybutton}
-                    disabled={name.length === 0}
-                    onPress={addPlayer}
+                    disabled={name.length === 0 && highescore < 0}
+                    onPress={Continue}
                 >
                     <Text style={GlobalStyle.AwesomeButtonTextBig}>Let's Play</Text>
                 </AwesomeButton>

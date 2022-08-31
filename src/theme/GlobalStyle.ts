@@ -73,10 +73,10 @@ const textShadow = {
     textShadowColor: "darkgrey",
     textShadowOffset: {
         width: 0,
-        height: 1,
+        height: 3,
     },
     textShadowRadius: 2.65,
-    elevation: 4,
+    elevation: 8,
 }
 
 const devBorder = {
@@ -149,6 +149,9 @@ export default StyleSheet.create({
     SpacingBox: {
         ...spacingXL,
     },
+    StartButton: {
+        marginTop: normalize(WINDOW_HEIGHT * .08),
+    },
     TextBig: {
         fontSize: normalize(20),
         color: theme.colors.textlight,
@@ -185,6 +188,24 @@ export default StyleSheet.create({
     RootBottomTabButtonText: {
         fontSize: normalize(18),
         color: theme.colors.textlight,
+    },
+    // ------------ React animations ------------
+    GrowAnimation: {
+        position: 'absolute',
+        zIndex: 100,
+        // middle of screen
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        justifyContent: 'center',
+        alignItems: 'center',
+        textAlign: 'center',
+        textAlignVertical: 'center',
+        fontSize: normalize(50),
+        fontWeight: 'bold',
+        color: theme.colors.textgold,
+        ...textShadow,
     },
 })
 

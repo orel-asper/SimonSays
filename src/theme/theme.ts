@@ -23,6 +23,9 @@ export const palette = {
     orange: '#FF9933',
     lightorange: '#ffb74d',
     darkorange: '#ff8a65',
+    gold: '#FFD700',
+    lightgold: '#ffe082',
+    darkgold: '#ffb300',
     white: '#FFFFFF',
     gray: '#818181',
     black: '#000000',
@@ -50,6 +53,7 @@ export const theme = {
         inputplaceholder: palette.gray,
         text: palette.black,
         textlight: palette.white,
+        textgold: palette.gold,
     },
     spacing: {
         s: 8,

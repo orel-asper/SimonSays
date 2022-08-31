@@ -1,5 +1,6 @@
 import { Dimensions } from "react-native"
 import { palette } from "../../theme/theme"
+import useSound from "react-native-use-sound";
 
 const { width, height } = Dimensions.get("window")
 
@@ -84,6 +85,26 @@ export const Buttons = {
         raiseLevel: 15,
         springRelease: true,
     },
+    start: {
+        type: "primary",
+        activityColor: palette.gold,
+        activeOpacity: 0.5,
+        backgroundActive: palette.lightgold,
+        backgroundColor: palette.gold,
+        backgroundDarker: palette.lightgold,
+        backgroundShadow: 'transparent',
+        backgroundPlaceholder: 'transparent',
+        backgroundProgress: palette.darkgold,
+        borderColor: palette.darkgold,
+        borderRadius: (height * .02),
+        borderWidth: 1,
+        height: (height * .1),
+        width: (height * .2),
+        paddingHorizontal: (width * .1),
+        stretch: false,
+        raiseLevel: 15,
+        springRelease: true,
+    }
 }
 
 export const GenerateRandomColor = () => {
@@ -101,4 +122,38 @@ export const GenerateRandomColor = () => {
             return Object.keys(Buttons)[0]
     }
 }
+
+export const GenerateRandomAchivementText = (type: string) => {
+    const random = Math.floor(Math.random() * 4)
+    if (type === 'win') {
+        switch (random) {
+            case 0:
+                return "Great Job!"
+            case 1:
+                return "You're a winner!"
+            case 2:
+                return "Amazing!"
+            case 3:
+                return "Unbelievable!"
+            default:
+                return "Great Job!"
+        }
+    } else {
+        switch (random) {
+            case 0:
+                return "Oh no!"
+            case 1:
+                return "Try again!"
+            case 2:
+                return "Better luck next time!"
+            case 3:
+                return "You lost!"
+            default:
+                return "Oh no!"
+        }
+    }
+}
+
+
+
 

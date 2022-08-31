@@ -40,7 +40,7 @@ export default (state = initialState, action: actionType): IState => {
                 ...state,
                 player: {
                     name: action.payload,
-                    score: (state.player.score || 0)
+                    score: 0
                 }
             }
         case ADD_SCORE:
@@ -50,7 +50,7 @@ export default (state = initialState, action: actionType): IState => {
                     name: state.player.name,
                     score: state.player.score + action.payload
                 },
-                highescore: state.player.score + action.payload > state.highescore ? state.player.score + action.payload : state.highescore
+                highescore: (state.player.score + action.payload > state.highescore) ? (state.player.score + action.payload) : state.highescore
             }
         case CLEAR_SCORE:
             return {
